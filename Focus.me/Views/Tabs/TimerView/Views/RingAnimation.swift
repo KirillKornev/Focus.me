@@ -13,9 +13,18 @@ private extension CGFloat {
 
 struct RingAnimation: View {
 
+    @State var counter: Int = 0
+
     // View model
     @EnvironmentObject var vm: TimerViewModel
+
     @State var isRunning = false
+    @State var timeRemaining: CGFloat = 0
+
+    // Computed
+    private var progress: CGFloat {
+        return (CGFloat(counter) / CGFloat(vm.fullTime))
+    }
 
     var body: some View {
         ZStack {
@@ -41,11 +50,9 @@ struct RingAnimation: View {
                 .frame(height: geometry.size.width)
             }
         }
-        .onChange(of: vm.isRunning) { newValue in
-            if newValue {
-                withAnimation(Animation.animation(with: vm.timeRemaining)) {
-                    self.isRunning = true
-                }
+        .onChange(of: vm.timeRemaining) { _ in
+            withAnimation(Animation.linear) {
+                counter += 1
             }
         }
     }
@@ -58,7 +65,7 @@ struct RingAnimation: View {
             .overlay {
                 // Foreground ring
                 Circle()
-                    .trim(from: 0, to: isRunning ? 1 : 0)
+                    .trim(from: 0, to: progress)
                     .stroke(color.gradient,
                             style: StrokeStyle(lineWidth: 20, lineCap: .round))
             }

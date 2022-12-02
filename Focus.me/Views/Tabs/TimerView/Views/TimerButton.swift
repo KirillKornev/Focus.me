@@ -16,8 +16,13 @@ struct TimerButton: View {
         Button {
             vm.run()
         } label: {
-            Text("Press Me")
-                .padding(20)
+            if vm.isRunning {
+                Text("Pause")
+                    .padding(20)
+            } else {
+                Text("Run")
+                    .padding(20)
+            }
         }
         .contentShape(Rectangle())
     }

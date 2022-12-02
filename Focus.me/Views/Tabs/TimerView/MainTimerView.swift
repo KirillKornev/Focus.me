@@ -17,6 +17,7 @@ struct MainTimerView: View {
             Spacer()
             TimerButton()
             Spacer(minLength: 100)
+            RemainTimeView()
         }
         .environmentObject(viewModel)
         .padding()
