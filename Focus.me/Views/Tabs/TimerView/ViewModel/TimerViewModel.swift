@@ -11,7 +11,7 @@ final class TimerViewModel: ObservableObject {
 
     @Published var isRunning = false
     @Published var isStopped = false
-    @Published var timeRemaining: Int = .zero
+    @Published var timeRemaining: Int = AvailableTime.one.inSeconds
     @Published var fullTimePeriod: AvailableTime = .one
 
     func setNewPeriod(_ period: AvailableTime) {
@@ -21,6 +21,17 @@ final class TimerViewModel: ObservableObject {
 
     func stop() {
         timeRemaining = fullTimePeriod.inSeconds
+        isRunning = false
+        isStopped = true
+    }
+
+    func run() {
+        isStopped = false
+        isRunning = true
+    }
+
+    func pause() {
+        isStopped = false
         isRunning = false
     }
 }

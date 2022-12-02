@@ -1,8 +1,8 @@
 //
-//  RingView.swift
+//  SingleRingeView.swift
 //  Focus.me
 //
-//  Created by Kirill Kornev on 01.12.2022.
+//  Created by Kirill Kornev on 02.12.2022.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ private extension CGFloat {
     static let padding: CGFloat = 10
 }
 
-struct RingView: View {
+struct SingleRingeView: View {
 
     @State var counter: Int = 0
 
@@ -37,25 +37,16 @@ struct RingView: View {
                     Spacer(minLength: 0)
                 }
                 .frame(height: geometry.size.width)
-
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer(minLength: 0)
-                        ring(for: ColorConstant.lime)
-                            .frame(width: geometry.size.width * 0.7 - .padding - 2 * 20)
-                        Spacer(minLength: 0)
-                    }
-                    Spacer()
-                }
-                .frame(height: geometry.size.width)
             }
         }
-        .onChange(of: vm.timeRemaining) { _ in
-            withAnimation(Animation.linear) {
-                counter += 1
-            }
-        }
+//        onChange(of: progress) { newValue in
+//            if vm.isRunning {
+//                withAnimation(.linear(duration: 1)) {
+//
+//                }
+//            }
+//        }
+        .animation(.linear(duration: vm.isStopped ? 0 : 1), value: progress)
     }
 
     // MARK: - Private

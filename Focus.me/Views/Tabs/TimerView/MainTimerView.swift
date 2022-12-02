@@ -13,7 +13,7 @@ struct MainTimerView: View {
 
     var body: some View {
         VStack {
-            RingView()
+            SingleRingeView()
             Spacer()
             TimerButton()
             Spacer(minLength: 100)

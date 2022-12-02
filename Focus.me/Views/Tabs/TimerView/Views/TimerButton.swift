@@ -15,7 +15,11 @@ struct TimerButton: View {
     var body: some View {
         VStack {
             Button {
-                vm.isRunning.toggle()
+                if vm.isRunning {
+                    vm.pause()
+                } else {
+                    vm.run()
+                }
             } label: {
                 if vm.isRunning {
                     Text("Pause")
