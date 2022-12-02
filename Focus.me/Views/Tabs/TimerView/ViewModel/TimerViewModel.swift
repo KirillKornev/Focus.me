@@ -10,14 +10,11 @@ import SwiftUI
 final class TimerViewModel: ObservableObject {
 
     @Published var isRunning = false
-    @Published var timeRemaining = 0
+    @Published var timeRemaining: Int = .zero
     @Published var fullTimePeriod: AvailableTime = .one
 
-    func setPeriod(_ period: AvailableTime) {
+    func setNewPeriod(_ period: AvailableTime) {
         timeRemaining = period.inSeconds
-    }
-
-    func run() {
-        isRunning.toggle()
+        fullTimePeriod = period
     }
 }

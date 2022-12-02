@@ -14,7 +14,7 @@ struct TimerButton: View {
 
     var body: some View {
         Button {
-            vm.run()
+            vm.isRunning.toggle()
         } label: {
             if vm.isRunning {
                 Text("Pause")
