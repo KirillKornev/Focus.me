@@ -10,7 +10,7 @@
 		356017402939125B004AD5C7 /* Focus_meApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560173F2939125B004AD5C7 /* Focus_meApp.swift */; };
 		356017442939125C004AD5C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356017432939125C004AD5C7 /* Assets.xcassets */; };
 		356017472939125C004AD5C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 356017462939125C004AD5C7 /* Preview Assets.xcassets */; };
-		3560174E293914C7004AD5C7 /* RingAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560174D293914C7004AD5C7 /* RingAnimation.swift */; };
+		3560174E293914C7004AD5C7 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560174D293914C7004AD5C7 /* RingView.swift */; };
 		3560175029391CE9004AD5C7 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560174F29391CE9004AD5C7 /* TimerView.swift */; };
 		3560175229392044004AD5C7 /* MainTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560175129392044004AD5C7 /* MainTimerView.swift */; };
 		3560175629392097004AD5C7 /* TimerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560175529392097004AD5C7 /* TimerButton.swift */; };
@@ -24,7 +24,7 @@
 		3560173F2939125B004AD5C7 /* Focus_meApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Focus_meApp.swift; sourceTree = "<group>"; };
 		356017432939125C004AD5C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		356017462939125C004AD5C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3560174D293914C7004AD5C7 /* RingAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingAnimation.swift; sourceTree = "<group>"; };
+		3560174D293914C7004AD5C7 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		3560174F29391CE9004AD5C7 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		3560175129392044004AD5C7 /* MainTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTimerView.swift; sourceTree = "<group>"; };
 		3560175529392097004AD5C7 /* TimerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerButton.swift; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 			children = (
 				3560175529392097004AD5C7 /* TimerButton.swift */,
 				356017642939FEB9004AD5C7 /* RemainTimeView.swift */,
-				3560174D293914C7004AD5C7 /* RingAnimation.swift */,
+				3560174D293914C7004AD5C7 /* RingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3560175829392700004AD5C7 /* TimerViewModel.swift in Sources */,
-				3560174E293914C7004AD5C7 /* RingAnimation.swift in Sources */,
+				3560174E293914C7004AD5C7 /* RingView.swift in Sources */,
 				3560175029391CE9004AD5C7 /* TimerView.swift in Sources */,
 				3560175B293934CC004AD5C7 /* ColorConstant.swift in Sources */,
 				3560175629392097004AD5C7 /* TimerButton.swift in Sources */,

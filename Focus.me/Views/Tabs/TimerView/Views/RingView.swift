@@ -1,5 +1,5 @@
 //
-//  RingAnimation.swift
+//  RingView.swift
 //  Focus.me
 //
 //  Created by Kirill Kornev on 01.12.2022.
@@ -11,7 +11,7 @@ private extension CGFloat {
     static let padding: CGFloat = 10
 }
 
-struct RingAnimation: View {
+struct RingView: View {
 
     @State var counter: Int = 0
 
