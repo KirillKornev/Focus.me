@@ -23,7 +23,8 @@ struct RingView: View {
 
     // Computed
     private var progress: CGFloat {
-        return (CGFloat(counter) / CGFloat(vm.fullTime))
+        let fullTime = vm.fullTimePeriod.inSeconds
+        return (CGFloat(fullTime - vm.timeRemaining) / CGFloat(fullTime))
     }
 
     var body: some View {
@@ -57,7 +58,9 @@ struct RingView: View {
         }
     }
 
-    func ring(for color: Color) -> some View {
+    // MARK: - Private
+
+    private func ring(for color: Color) -> some View {
         // Background ring
         Circle()
             .stroke(style: StrokeStyle(lineWidth: 20))
@@ -70,13 +73,5 @@ struct RingView: View {
                             style: StrokeStyle(lineWidth: 20, lineCap: .round))
             }
             .rotationEffect(.degrees(-90))
-    }
-}
-
-private extension Animation {
-
-    static func animation(with duration: Int) -> Animation {
-        Animation
-            .linear(duration: Double(duration))
     }
 }
