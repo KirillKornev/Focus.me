@@ -13,11 +13,12 @@ struct MainTimerView: View {
 
     var body: some View {
         VStack {
-            RingAnimation().environmentObject(viewModel)
+            RingAnimation()
             Spacer()
-            TimerButton().environmentObject(viewModel)
+            TimerButton()
             Spacer(minLength: 100)
         }
+        .environmentObject(viewModel)
         .padding()
     }
 }
