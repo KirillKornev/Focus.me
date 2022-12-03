@@ -13,8 +13,6 @@ private extension CGFloat {
 
 struct DoubleRingView: View {
 
-    @State var counter: Int = 0
-
     // View model
     @EnvironmentObject var vm: TimerViewModel
 
@@ -28,31 +26,38 @@ struct DoubleRingView: View {
         ZStack {
             GeometryReader { geometry in
                 HStack {
-                    Spacer(minLength: 0)
+                    Spacer()
                     ring(for: ColorConstant.strawberry)
                         .frame(width: geometry.size.width * 0.7)
-                    Spacer(minLength: 0)
+                    Spacer()
                 }
                 .frame(height: geometry.size.width)
+                .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
 
                 VStack {
                     Spacer()
                     HStack {
-                        Spacer(minLength: 0)
+                        Spacer()
                         ring(for: ColorConstant.lime)
                             .frame(width: geometry.size.width * 0.7 - .padding - 2 * 20)
-                        Spacer(minLength: 0)
+                            .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
+                        Spacer()
                     }
                     Spacer()
                 }
-                .frame(height: geometry.size.width)
+
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        RemainTimeView()
+                        Spacer()
+                    }
+                    Spacer()
+                }
             }
         }
-        .onChange(of: vm.timeRemaining) { _ in
-            withAnimation(Animation.linear) {
-                counter += 1
-            }
-        }
+        .frame(height: UIScreen.main.bounds.width)
     }
 
     // MARK: - Private
