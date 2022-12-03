@@ -44,7 +44,5 @@ struct TaskCellView: View {
         .background(Color.gray)
         .cornerRadius(16)
         .padding()
-
-        .tappable()
     }
 }

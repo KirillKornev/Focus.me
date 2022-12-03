@@ -7,37 +7,49 @@
 
 import SwiftUI
 
-private extension Double {
-    static let response = 0.4
-    static let dampingFraction = 0.6
-}
-
 struct TapModifier: ViewModifier {
 
-    @State private var tapped: Bool = false
+    private enum ButtonState: Int {
+        case pressed
+        case free
+
+        var scale: Double {
+            switch self {
+            case .pressed:
+                return 0.99
+            case .free:
+                return 1
+            }
+        }
+    }
+
+    let closure: (() -> Void)?
+
+    @State private var state: ButtonState = .pressed
 
     func body(content: Content) -> some View {
         content
-            .scaleEffect(tapped ? 0.95 : 1)
-            .animation(.spring(response: .response, dampingFraction: .dampingFraction), value: tapped)
-
             .gesture(
                 DragGesture(minimumDistance: .zero)
                     .onChanged({ _ in
-                        tapped = true
+                        state = .pressed
+                        closure?()
                     })
 
                     .onEnded({ _ in
-                        tapped = false
+                        state = .free
                     })
             )
+
+            .scaleEffect(state.scale)
+            .animation(.easeIn(duration: 6), value: state)
     }
 }
 
 extension View {
 
     /// Create an tap scale effect
-    func tappable() -> some View {
-        modifier(TapModifier())
+    func tappable(closure: (() -> Void)? = nil) -> some View {
+        modifier(TapModifier(closure: closure))
     }
 }

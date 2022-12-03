@@ -13,19 +13,11 @@ struct TasksListView: View {
                          .init(id: 2, title: "Task 2", time: 24),
                          .init(id: 3, title: "Task 3", time: 24)]
 
-    var isPressed: Bool = false
-
     var body: some View {
 
-        List {
-            ForEach(tasks) { task in
-                Button {
-//                    print("task \(task.title)")
-                } label: {
-                    TaskCellView(task: task)
-                }
-                .listRowBackground(Color.clear)
-            }
+        List(tasks) { task in
+            TaskCellView(task: task).tappable()
+            .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
     }
