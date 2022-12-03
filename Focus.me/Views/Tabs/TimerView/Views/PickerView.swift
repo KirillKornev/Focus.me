@@ -15,16 +15,19 @@ struct PickerView: View {
     @State private var selection: AvailableTime = .one
 
     var body: some View {
-        Picker("Pick a time", selection: $selection) {
-            ForEach(AvailableTime.allCases, id: \.self) { item in
-                Text(item.stringValue.capitalized)
+        VStack {
+            Text("Period of time")
+            Picker("", selection: $selection) {
+                ForEach(AvailableTime.allCases, id: \.self) { item in
+                    Text(item.stringValue.capitalized)
+                }
             }
-        }
-        .onAppear {
-            vm.setNewPeriod(selection)
-        }
-        .onChange(of: selection) { newValue in
-            vm.setNewPeriod(newValue)
+            .onAppear {
+                vm.setNewPeriod(selection)
+            }
+            .onChange(of: selection) { newValue in
+                vm.setNewPeriod(newValue)
+            }
         }
     }
 }
