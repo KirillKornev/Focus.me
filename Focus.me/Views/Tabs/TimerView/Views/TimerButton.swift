@@ -41,6 +41,20 @@ struct TimerButton: View {
         } label: {
             Text("Stop")
         }
+        .isHidden(shouldHideStopButton(state: vm.state))
         .contentShape(Rectangle())
+    }
+
+    // MARK: - Private
+
+    private func shouldHideStopButton(state: TimerState) -> Bool {
+        switch state {
+        case .run:
+            return true
+        case .pause:
+            return false
+        case .stop:
+            return true
+        }
     }
 }

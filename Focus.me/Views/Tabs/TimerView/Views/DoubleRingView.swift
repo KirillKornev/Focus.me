@@ -18,9 +18,6 @@ struct DoubleRingView: View {
     // View model
     @EnvironmentObject var vm: TimerViewModel
 
-    @State var isRunning = false
-    @State var timeRemaining: CGFloat = 0
-
     // Computed
     private var progress: CGFloat {
         let fullTime = vm.fullTimePeriod.inSeconds

@@ -13,16 +13,13 @@ struct MainTimerView: View {
 
     var body: some View {
         VStack {
-            SingleRingeView()
             Spacer()
+            SingleRingeView()
             TimerButton()
-            Spacer(minLength: 100)
-//            RemainTimeView()
-//            Spacer()
-            PickerView()
+            Spacer()
+            PickerView().isHidden(viewModel.state != .stop)
         }
         .environmentObject(viewModel)
-        .padding()
     }
 }
 

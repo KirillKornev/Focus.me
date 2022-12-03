@@ -23,18 +23,24 @@ struct SingleRingeView: View {
     }
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
+        ZStack {
+            GeometryReader { geometry in
                 HStack(alignment: .center) {
                     Spacer()
                     ring(for: ColorConstant.strawberry)
                     Spacer()
                 }
+                .frame(height: geometry.size.width - 50)
                 .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
 
-                RemainTimeView()
+                HStack {
+                    Spacer()
+                    RemainTimeView()
+                    Spacer()
+                }
+                .frame(height: geometry.size.width - 50)
             }
-            .frame(height: geometry.size.width - 50)
+            .frame(height: UIScreen.main.bounds.width)
         }
     }
 
