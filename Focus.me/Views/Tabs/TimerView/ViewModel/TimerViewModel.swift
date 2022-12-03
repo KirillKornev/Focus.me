@@ -9,11 +9,7 @@ import SwiftUI
 
 final class TimerViewModel: ObservableObject {
 
-    @Published var timeRemaining: Int = AvailableTime.one.inSeconds {
-        didSet {
-            print("timeRemaining \(timeRemaining)")
-        }
-    }
+    @Published var timeRemaining: Int = AvailableTime.one.inSeconds
     @Published var fullTimePeriod: AvailableTime = .one
 
     var count: Int = 0
@@ -30,7 +26,6 @@ final class TimerViewModel: ObservableObject {
     }
 
     func setNewPeriod(_ period: AvailableTime) {
-        print("setNewPeriod \(period)")
         timeRemaining = period.inSeconds
         fullTimePeriod = period
     }
