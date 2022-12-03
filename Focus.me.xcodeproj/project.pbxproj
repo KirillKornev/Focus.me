@@ -27,6 +27,7 @@
 		35601780293BCB1E004AD5C7 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560177F293BCB1E004AD5C7 /* TasksListView.swift */; };
 		35601783293BCBA8004AD5C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601782293BCBA8004AD5C7 /* Task.swift */; };
 		35601786293BCE1B004AD5C7 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601785293BCE1B004AD5C7 /* TaskCellView.swift */; };
+		35EDF225293BE032000DD9DA /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF224293BE032000DD9DA /* Tappable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3560177F293BCB1E004AD5C7 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
 		35601782293BCBA8004AD5C7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		35601785293BCE1B004AD5C7 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		35EDF224293BE032000DD9DA /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 		3560176B293A3B54004AD5C7 /* Halpers */ = {
 			isa = PBXGroup;
 			children = (
+				35EDF223293BE029000DD9DA /* Modifiers */,
 				3560176C293A3B62004AD5C7 /* View+Extensions.swift */,
 				35601775293B9633004AD5C7 /* FeedbackGenerator.swift */,
 			);
@@ -211,6 +214,14 @@
 				35601785293BCE1B004AD5C7 /* TaskCellView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		35EDF223293BE029000DD9DA /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				35EDF224293BE032000DD9DA /* Tappable.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				3560175629392097004AD5C7 /* TimerButton.swift in Sources */,
 				35601776293B9633004AD5C7 /* FeedbackGenerator.swift in Sources */,
 				356017652939FEB9004AD5C7 /* RemainTimeView.swift in Sources */,
+				35EDF225293BE032000DD9DA /* Tappable.swift in Sources */,
 				3560175229392044004AD5C7 /* MainTimerView.swift in Sources */,
 				35601780293BCB1E004AD5C7 /* TasksListView.swift in Sources */,
 				3560176A293A24D5004AD5C7 /* AvailableTime.swift in Sources */,

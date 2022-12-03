@@ -11,7 +11,7 @@ import UIKit
 struct TaskCellView: View {
 
     var task: Task
-    @State var tapped: Bool = false
+//    @State var tapped: Bool = false
 
     var body: some View {
         VStack {
@@ -46,24 +46,6 @@ struct TaskCellView: View {
         .cornerRadius(16)
         .padding()
 
-        .scaleEffect(tapped ? 0.95 : 1)
-        .animation(.spring(response: 0.4, dampingFraction: 0.6), value: tapped)
-
-        .gesture(
-            DragGesture(minimumDistance: .zero)
-                .onChanged({ _ in
-                    tapped = true
-                })
-
-                .onEnded({ _ in
-                    tapped = false
-                })
-        )
-    }
-}
-
-struct TaskCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        TaskCellView(task: .init(id: 1, title: "134", time: 56))
+        .tappable()
     }
 }
