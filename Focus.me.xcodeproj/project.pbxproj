@@ -24,6 +24,11 @@
 		35601774293B602B004AD5C7 /* ImageConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601773293B602B004AD5C7 /* ImageConstant.swift */; };
 		35601776293B9633004AD5C7 /* FeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601775293B9633004AD5C7 /* FeedbackGenerator.swift */; };
 		3560177C293B9F8A004AD5C7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560177B293B9F8A004AD5C7 /* MainView.swift */; };
+		35601780293BCB1E004AD5C7 /* TasksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3560177F293BCB1E004AD5C7 /* TasksListView.swift */; };
+		35601783293BCBA8004AD5C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601782293BCBA8004AD5C7 /* Task.swift */; };
+		35601786293BCE1B004AD5C7 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601785293BCE1B004AD5C7 /* TaskCellView.swift */; };
+		35EDF225293BE032000DD9DA /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF224293BE032000DD9DA /* Tappable.swift */; };
+		35EDF228293BEF0E000DD9DA /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,12 @@
 		35601773293B602B004AD5C7 /* ImageConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConstant.swift; sourceTree = "<group>"; };
 		35601775293B9633004AD5C7 /* FeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackGenerator.swift; sourceTree = "<group>"; };
 		3560177B293B9F8A004AD5C7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		3560177D293BCA12004AD5C7 /* Focus-me-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Focus-me-Info.plist"; sourceTree = SOURCE_ROOT; };
+		3560177F293BCB1E004AD5C7 /* TasksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListView.swift; sourceTree = "<group>"; };
+		35601782293BCBA8004AD5C7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		35601785293BCE1B004AD5C7 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		35EDF224293BE032000DD9DA /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
+		35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,7 @@
 		3560173E2939125B004AD5C7 /* Focus.me */ = {
 			isa = PBXGroup;
 			children = (
+				3560177D293BCA12004AD5C7 /* Focus-me-Info.plist */,
 				3560173F2939125B004AD5C7 /* Focus_meApp.swift */,
 				3560176B293A3B54004AD5C7 /* Halpers */,
 				3560175329392075004AD5C7 /* Views */,
@@ -127,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				3560177B293B9F8A004AD5C7 /* MainView.swift */,
+				3560177E293BCB0E004AD5C7 /* TasksList */,
 				3560175429392083004AD5C7 /* TimerView */,
 			);
 			path = Tabs;
@@ -164,6 +177,7 @@
 		3560176B293A3B54004AD5C7 /* Halpers */ = {
 			isa = PBXGroup;
 			children = (
+				35EDF223293BE029000DD9DA /* Modifiers */,
 				3560176C293A3B62004AD5C7 /* View+Extensions.swift */,
 				35601775293B9633004AD5C7 /* FeedbackGenerator.swift */,
 			);
@@ -176,6 +190,49 @@
 				3560175529392097004AD5C7 /* TimerButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		3560177E293BCB0E004AD5C7 /* TasksList */ = {
+			isa = PBXGroup;
+			children = (
+				35EDF226293BEF01000DD9DA /* ViewModel */,
+				3560177F293BCB1E004AD5C7 /* TasksListView.swift */,
+				35601784293BCDE7004AD5C7 /* Cells */,
+				35601781293BCB9A004AD5C7 /* Models */,
+			);
+			path = TasksList;
+			sourceTree = "<group>";
+		};
+		35601781293BCB9A004AD5C7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				35601782293BCBA8004AD5C7 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		35601784293BCDE7004AD5C7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				35601785293BCE1B004AD5C7 /* TaskCellView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		35EDF223293BE029000DD9DA /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				35EDF224293BE032000DD9DA /* Tappable.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		35EDF226293BEF01000DD9DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,12 +314,17 @@
 				3560175B293934CC004AD5C7 /* ColorConstant.swift in Sources */,
 				3560175629392097004AD5C7 /* TimerButton.swift in Sources */,
 				35601776293B9633004AD5C7 /* FeedbackGenerator.swift in Sources */,
+				35EDF228293BEF0E000DD9DA /* TasksListViewModel.swift in Sources */,
 				356017652939FEB9004AD5C7 /* RemainTimeView.swift in Sources */,
+				35EDF225293BE032000DD9DA /* Tappable.swift in Sources */,
 				3560175229392044004AD5C7 /* MainTimerView.swift in Sources */,
+				35601780293BCB1E004AD5C7 /* TasksListView.swift in Sources */,
 				3560176A293A24D5004AD5C7 /* AvailableTime.swift in Sources */,
 				3560176F293A49A2004AD5C7 /* SingleRingeView.swift in Sources */,
 				3560177C293B9F8A004AD5C7 /* MainView.swift in Sources */,
+				35601783293BCBA8004AD5C7 /* Task.swift in Sources */,
 				356017402939125B004AD5C7 /* Focus_meApp.swift in Sources */,
+				35601786293BCE1B004AD5C7 /* TaskCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +456,9 @@
 				DEVELOPMENT_TEAM = 7QZT79MHG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Focus-me-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -423,9 +485,9 @@
 				DEVELOPMENT_TEAM = 7QZT79MHG2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Focus-me-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

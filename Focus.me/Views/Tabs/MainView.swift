@@ -28,10 +28,11 @@ struct MainView: View {
                 Image(systemName: "timer")
             }.tag(0)
                 .highPriorityGesture(DragGesture().onEnded({ self.handleSwipe(translation: $0.translation.width)}))
+
             NavigationView{
-                Text("Here is tasks screen")
+                TasksListView()
             }.tabItem {
-                Image(systemName: "timelapse")
+                Image(systemName: "gearshape.fill")
             }.tag(1)
                 .highPriorityGesture(DragGesture().onEnded({ self.handleSwipe(translation: $0.translation.width)}))
         }
