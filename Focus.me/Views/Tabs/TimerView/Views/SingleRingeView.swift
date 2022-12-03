@@ -13,13 +13,8 @@ private extension CGFloat {
 
 struct SingleRingeView: View {
 
-    @State var counter: Int = 0
-
     // View model
     @EnvironmentObject var vm: TimerViewModel
-
-    @State var isRunning = false
-    @State var timeRemaining: CGFloat = 0
 
     // Computed
     private var progress: CGFloat {
@@ -30,23 +25,23 @@ struct SingleRingeView: View {
     var body: some View {
         ZStack {
             GeometryReader { geometry in
-                HStack {
-                    Spacer(minLength: 0)
+                HStack(alignment: .center) {
+                    Spacer()
                     ring(for: ColorConstant.strawberry)
-                        .frame(width: geometry.size.width * 0.7)
-                    Spacer(minLength: 0)
+                    Spacer()
                 }
-                .frame(height: geometry.size.width)
+                .frame(height: geometry.size.width - 50)
+                .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
+
+                HStack {
+                    Spacer()
+                    RemainTimeView()
+                    Spacer()
+                }
+                .frame(height: geometry.size.width - 50)
             }
+            .frame(height: UIScreen.main.bounds.width)
         }
-//        onChange(of: progress) { newValue in
-//            if vm.isRunning {
-//                withAnimation(.linear(duration: 1)) {
-//
-//                }
-//            }
-//        }
-        .animation(.linear(duration: vm.isStopped ? 0 : 1), value: progress)
     }
 
     // MARK: - Private

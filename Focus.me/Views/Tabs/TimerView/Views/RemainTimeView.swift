@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+extension String {
+    static let font = "Avenir Next"
+}
+
 struct RemainTimeView: View {
 
     // View model
@@ -16,14 +20,24 @@ struct RemainTimeView: View {
     
     var body: some View {
         VStack {
-            Text("\(vm.timeRemaining)")
+            Text("\(countToMinutes(timeRemaining: vm.timeRemaining))")
                 .padding()
                 .onReceive(timer) { _ in
-                    if vm.timeRemaining > 0 && vm.isRunning {
+                    if vm.timeRemaining > 0 && vm.state == .run {
                         vm.timeRemaining -= 1
                     }
                 }
-                .font(.system(size: 40, weight: .bold))
+                .font(.custom(.font, size: 60))
+                .fontWeight(.black)
         }
+    }
+
+    // MARK: - Private
+
+    private func countToMinutes(timeRemaining: Int) -> String {
+        let minutes = Int(timeRemaining / 60)
+        let seconds = timeRemaining % 60
+
+        return "\(minutes):\(seconds < 10 ? "0" : "")\(seconds)"
     }
 }
