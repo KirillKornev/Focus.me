@@ -11,4 +11,5 @@ enum ImageConstant {
     static let play = "play"
     static let pause = "pause"
     static let stop = "stop"
+    static let cardAlarm = "alarm"
 }

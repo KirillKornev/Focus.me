@@ -15,7 +15,7 @@ struct TaskCellView: View {
     var body: some View {
         VStack {
             HStack {
-                Image(systemName: "alarm")
+                Image(systemName: ImageConstant.cardAlarm)
                     .padding(5)
                     .background(Color.orange)
                     .foregroundColor(Color.white)
