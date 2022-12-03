@@ -7,11 +7,15 @@
 
 import Foundation
 
-final class TasksListViewModel: ObservableObject {
-
-    @Published var tasks: [Task] = [.init(id: 1, title: "Task 1", time: 24),
+private struct Constants {
+    static let fakeTasks: [Task] = [.init(id: 1, title: "Task 1", time: 24),
                                     .init(id: 2, title: "Task 2", time: 24),
                                     .init(id: 3, title: "Task 3", time: 24)]
+}
+
+final class TasksListViewModel: ObservableObject {
+
+    @Published var tasks: [Task] = Constants.fakeTasks
 
     func addTask(_ task: Task) {
         tasks.append(task)
