@@ -10,18 +10,22 @@ import SwiftUI
 
 struct TimerButton: View {
 
+    // View model
     @EnvironmentObject var vm: TimerViewModel
 
     var body: some View {
         VStack {
             Button {
-                if vm.isRunning {
-                    vm.pause()
-                } else {
-                    vm.run()
+                switch vm.state {
+                case .run:
+                    vm.state = .pause
+                case .pause:
+                    vm.state = .run
+                case .stop:
+                    vm.state = .run
                 }
             } label: {
-                if vm.isRunning {
+                if vm.state == .run {
                     Text("Pause")
                         .padding(20)
                 } else {
@@ -33,7 +37,7 @@ struct TimerButton: View {
         }
 
         Button {
-            vm.stop()
+            vm.state = .stop
         } label: {
             Text("Stop")
         }

@@ -19,7 +19,7 @@ struct RemainTimeView: View {
             Text("\(vm.timeRemaining)")
                 .padding()
                 .onReceive(timer) { _ in
-                    if vm.timeRemaining > 0 && vm.isRunning {
+                    if vm.timeRemaining > 0 && vm.state == .run {
                         vm.timeRemaining -= 1
                     }
                 }

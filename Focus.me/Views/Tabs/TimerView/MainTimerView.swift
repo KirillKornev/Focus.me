@@ -17,8 +17,8 @@ struct MainTimerView: View {
             Spacer()
             TimerButton()
             Spacer(minLength: 100)
-            RemainTimeView()
-            Spacer()
+//            RemainTimeView()
+//            Spacer()
             PickerView()
         }
         .environmentObject(viewModel)
