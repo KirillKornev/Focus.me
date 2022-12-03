@@ -9,14 +9,13 @@ import SwiftUI
 
 struct TasksListView: View {
 
-    var tasks: [Task] = [.init(id: 1, title: "Task 1", time: 24),
-                         .init(id: 2, title: "Task 2", time: 24),
-                         .init(id: 3, title: "Task 3", time: 24)]
+    // View model
+    @StateObject private var viewModel = TasksListViewModel()
 
     var body: some View {
 
-        List(tasks) { task in
-            TaskCellView(task: task).tappable()
+        List(viewModel.tasks) { task in
+            TaskCellView(task: task).tappable() { viewModel.removeTask(task) }
             .listRowBackground(Color.clear)
         }
         .listStyle(.plain)

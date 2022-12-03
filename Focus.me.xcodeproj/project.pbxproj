@@ -28,6 +28,7 @@
 		35601783293BCBA8004AD5C7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601782293BCBA8004AD5C7 /* Task.swift */; };
 		35601786293BCE1B004AD5C7 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601785293BCE1B004AD5C7 /* TaskCellView.swift */; };
 		35EDF225293BE032000DD9DA /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF224293BE032000DD9DA /* Tappable.swift */; };
+		35EDF228293BEF0E000DD9DA /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		35601782293BCBA8004AD5C7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		35601785293BCE1B004AD5C7 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		35EDF224293BE032000DD9DA /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
+		35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 		3560177E293BCB0E004AD5C7 /* TasksList */ = {
 			isa = PBXGroup;
 			children = (
+				35EDF226293BEF01000DD9DA /* ViewModel */,
 				3560177F293BCB1E004AD5C7 /* TasksListView.swift */,
 				35601784293BCDE7004AD5C7 /* Cells */,
 				35601781293BCB9A004AD5C7 /* Models */,
@@ -222,6 +225,14 @@
 				35EDF224293BE032000DD9DA /* Tappable.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		35EDF226293BEF01000DD9DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 				3560175B293934CC004AD5C7 /* ColorConstant.swift in Sources */,
 				3560175629392097004AD5C7 /* TimerButton.swift in Sources */,
 				35601776293B9633004AD5C7 /* FeedbackGenerator.swift in Sources */,
+				35EDF228293BEF0E000DD9DA /* TasksListViewModel.swift in Sources */,
 				356017652939FEB9004AD5C7 /* RemainTimeView.swift in Sources */,
 				35EDF225293BE032000DD9DA /* Tappable.swift in Sources */,
 				3560175229392044004AD5C7 /* MainTimerView.swift in Sources */,

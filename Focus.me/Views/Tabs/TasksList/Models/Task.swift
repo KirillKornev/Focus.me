@@ -12,3 +12,10 @@ struct Task: Identifiable {
     let title: String
     let time: Int
 }
+
+extension Task: Equatable {
+
+    static func == (lhs: Task, rhs: Task) -> Bool {
+        lhs.id == rhs.id
+    }
+}
