@@ -35,7 +35,8 @@ struct TapModifier: ViewModifier {
 }
 
 extension View {
-    
+
+    /// Create an tap scale effect
     func tappable() -> some View {
         modifier(TapModifier())
     }
