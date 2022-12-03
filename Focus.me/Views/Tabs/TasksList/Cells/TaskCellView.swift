@@ -11,7 +11,6 @@ import UIKit
 struct TaskCellView: View {
 
     var task: Task
-//    @State var tapped: Bool = false
 
     var body: some View {
         VStack {
