@@ -49,12 +49,10 @@ struct TimerButton: View {
 
     private func shouldHideStopButton(state: TimerState) -> Bool {
         switch state {
-        case .run:
+        case .run, .stop:
             return true
         case .pause:
             return false
-        case .stop:
-            return true
         }
     }
 }
