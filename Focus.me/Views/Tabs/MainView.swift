@@ -31,7 +31,7 @@ struct MainView: View {
             NavigationView{
                 Text("Here is tasks screen")
             }.tabItem {
-                Image(systemName: "timelapse")
+                Image(systemName: "gearshape.fill")
             }.tag(1)
                 .highPriorityGesture(DragGesture().onEnded({ self.handleSwipe(translation: $0.translation.width)}))
         }
