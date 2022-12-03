@@ -22,9 +22,6 @@ struct PickerView: View {
                     Text(item.stringValue.capitalized)
                 }
             }
-            .onAppear {
-                vm.setNewPeriod(selection)
-            }
             .onChange(of: selection) { newValue in
                 vm.setNewPeriod(newValue)
             }
