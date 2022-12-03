@@ -11,7 +11,7 @@ import SwiftUI
 struct Focus_meApp: App {
     var body: some Scene {
         WindowGroup {
-            MainTimerView()
+            MainView()
         }
     }
 }
