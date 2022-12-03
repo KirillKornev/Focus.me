@@ -1,0 +1,10 @@
+## User settings
+xcuserdata/
+
+.DS_Store
+xcuserdata
+
+### Xcode ###
+build
+DerivedData/
+*.xcworkspacedata
