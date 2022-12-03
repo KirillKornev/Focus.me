@@ -9,10 +9,14 @@ import SwiftUI
 
 final class TimerViewModel: ObservableObject {
 
-    @Published var timeRemaining: Int = AvailableTime.one.inSeconds
     @Published var fullTimePeriod: AvailableTime = .one
-
-    var count: Int = 0
+    @Published var timeRemaining: Int = AvailableTime.one.inSeconds {
+        didSet {
+            if timeRemaining == 0 {
+                state = .stop
+            }
+        }
+    }
 
     @Published var state: TimerState = .stop {
         didSet {
