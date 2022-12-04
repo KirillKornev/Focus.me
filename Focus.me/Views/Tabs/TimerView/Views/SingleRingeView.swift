@@ -11,6 +11,10 @@ private extension CGFloat {
     static let padding: CGFloat = 10
 }
 
+private extension Double {
+    static let circlePadding: Double = 100
+}
+
 struct SingleRingeView: View {
 
     @State private var scale = false
@@ -32,7 +36,7 @@ struct SingleRingeView: View {
                     ring(for: ColorConstant.strawberry)
                     Spacer()
                 }
-                .frame(height: geometry.size.width - 50)
+                .frame(height: geometry.size.width - .circlePadding)
                 .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
 
                 HStack {
@@ -40,7 +44,7 @@ struct SingleRingeView: View {
                     RemainTimeView()
                     Spacer()
                 }
-                .frame(height: geometry.size.width - 50)
+                .frame(height: geometry.size.width - .circlePadding)
             }
             .frame(height: UIScreen.main.bounds.width)
         }
