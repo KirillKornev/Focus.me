@@ -13,6 +13,8 @@ private extension CGFloat {
 
 struct SingleRingeView: View {
 
+    @State private var scale = false
+
     // View model
     @EnvironmentObject var vm: TimerViewModel
 
@@ -42,6 +44,8 @@ struct SingleRingeView: View {
             }
             .frame(height: UIScreen.main.bounds.width)
         }
+        .contentShape(Rectangle())
+        .tappable {}
     }
 
     // MARK: - Private

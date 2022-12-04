@@ -29,6 +29,7 @@
 		35601786293BCE1B004AD5C7 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35601785293BCE1B004AD5C7 /* TaskCellView.swift */; };
 		35EDF225293BE032000DD9DA /* Tappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF224293BE032000DD9DA /* Tappable.swift */; };
 		35EDF228293BEF0E000DD9DA /* TasksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */; };
+		35EDF22A293D099B000DD9DA /* TapCircleAnimatableModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF229293D099B000DD9DA /* TapCircleAnimatableModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		35601785293BCE1B004AD5C7 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		35EDF224293BE032000DD9DA /* Tappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tappable.swift; sourceTree = "<group>"; };
 		35EDF227293BEF0E000DD9DA /* TasksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListViewModel.swift; sourceTree = "<group>"; };
+		35EDF229293D099B000DD9DA /* TapCircleAnimatableModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapCircleAnimatableModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				35EDF224293BE032000DD9DA /* Tappable.swift */,
+				35EDF229293D099B000DD9DA /* TapCircleAnimatableModifier.swift */,
 			);
 			path = Modifiers;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				35EDF225293BE032000DD9DA /* Tappable.swift in Sources */,
 				3560175229392044004AD5C7 /* MainTimerView.swift in Sources */,
 				35601780293BCB1E004AD5C7 /* TasksListView.swift in Sources */,
+				35EDF22A293D099B000DD9DA /* TapCircleAnimatableModifier.swift in Sources */,
 				3560176A293A24D5004AD5C7 /* AvailableTime.swift in Sources */,
 				3560176F293A49A2004AD5C7 /* SingleRingeView.swift in Sources */,
 				3560177C293B9F8A004AD5C7 /* MainView.swift in Sources */,
