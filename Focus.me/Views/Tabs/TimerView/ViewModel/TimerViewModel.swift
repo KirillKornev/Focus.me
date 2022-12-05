@@ -34,21 +34,20 @@ final class TimerViewModel: ObservableObject {
         }
     }
 
+    /// Progress of timer view
     var progress: CGFloat {
         let fullTime = fullTimePeriod.inSeconds
         let result = (CGFloat(fullTime - timeRemaining) / CGFloat(fullTime))
         return result
     }
 
-    var isPaused: Bool {
-        get { state == .pause }
-
-        set {
-            if newValue {
-                state = .pause
-            } else {
-                state = .run
-            }
+    /// Change timer state
+    func toggleState() {
+        if state == .stop {
+            state = .run
+        } else {
+            let nextState: TimerState = state == .pause ? .run : .pause
+            state = nextState
         }
     }
 

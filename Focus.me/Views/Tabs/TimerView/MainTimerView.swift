@@ -19,13 +19,32 @@ struct MainTimerView: View {
 
     var body: some View {
         ZStack {
-            if viewModel.state == .pause {
-                Image(systemName: ImageConstant.pause)
-                    .resizable()
-                    .frame(width: .imageSide, height: .imageSide)
-            } else {
-                RemainTimeView(timeRemaining: viewModel.timeRemaining)
+            VStack {
+                if viewModel.state == .pause {
+                    Image(systemName: ImageConstant.pause)
+                        .resizable()
+                        .frame(width: .imageSide, height: .imageSide)
+                } else if viewModel.state == .stop {
+                    RemainTimeView(timeRemaining: viewModel.timeRemaining)
+                    Image(systemName: ImageConstant.play)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                } else {
+                    RemainTimeView(timeRemaining: viewModel.timeRemaining)
+                    Image(systemName: ImageConstant.pause)
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                }
             }
+
+
+//            if viewModel.state == .pause {
+//                Image(systemName: ImageConstant.pause)
+//                    .resizable()
+//                    .frame(width: .imageSide, height: .imageSide)
+//            } else {
+//                RemainTimeView(timeRemaining: viewModel.timeRemaining)
+//            }
 
             RingProgressView(progress: viewModel.progress)
                 .padding(.sideEdgeInsets(value: .progressViewPaddings))
@@ -42,7 +61,7 @@ struct MainTimerView: View {
         .tappable { result in
             switch result {
             case .shortTap:
-                viewModel.isPaused.toggle()
+                viewModel.toggleState() //isPaused.toggle()
             case .longTap:
                 isPresentedAlert = true
             }
