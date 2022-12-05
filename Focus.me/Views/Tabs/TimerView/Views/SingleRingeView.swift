@@ -49,7 +49,14 @@ struct SingleRingeView: View {
             .frame(height: UIScreen.main.bounds.width)
         }
         .contentShape(Rectangle())
-        .tappable {}
+        .tappable { result in
+            switch result {
+            case .shortTap:
+                vm.isPaused.toggle()
+            case .longTap:
+                vm.state = .stop
+            }
+        }
     }
 
     // MARK: - Private

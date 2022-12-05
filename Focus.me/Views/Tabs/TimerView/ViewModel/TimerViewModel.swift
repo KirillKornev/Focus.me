@@ -29,6 +29,18 @@ final class TimerViewModel: ObservableObject {
         }
     }
 
+    var isPaused: Bool {
+        get { state == .pause }
+
+        set {
+            if newValue {
+                state = .pause
+            } else {
+                state = .run
+            }
+        }
+    }
+
     func setNewPeriod(_ period: AvailableTime) {
         timeRemaining = period.inSeconds
         fullTimePeriod = period
