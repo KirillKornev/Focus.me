@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+private extension CGFloat {
+    static let progressViewPaddings: CGFloat = 50
+}
+
 struct MainTimerView: View {
 
     @StateObject private var viewModel = TimerViewModel()
@@ -22,7 +26,7 @@ struct MainTimerView: View {
             }
 
             RingProgressView(progress: viewModel.progress)
-                .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+                .padding(.sideEdgeInsets(value: .progressViewPaddings))
         }
         .contentShape(Rectangle())
 
