@@ -14,7 +14,16 @@ struct MainTimerView: View {
     var body: some View {
         VStack {
             Spacer()
-            SingleRingeView()
+            SingleRingeView(progress: viewModel.progress)
+                .tappable { result in
+                    switch result {
+                    case .shortTap:
+                        viewModel.isPaused.toggle()
+                    case .longTap:
+                        viewModel.state = .stop
+                    }
+                }
+
             TimerButton()
             Spacer()
             PickerView().isHidden(viewModel.state != .stop)

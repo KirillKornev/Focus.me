@@ -29,6 +29,12 @@ final class TimerViewModel: ObservableObject {
         }
     }
 
+    var progress: CGFloat {
+        let fullTime = fullTimePeriod.inSeconds
+        let result = (CGFloat(fullTime - timeRemaining) / CGFloat(fullTime))
+        return result
+    }
+
     var isPaused: Bool {
         get { state == .pause }
 

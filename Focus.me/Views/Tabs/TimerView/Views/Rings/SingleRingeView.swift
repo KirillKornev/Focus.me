@@ -15,18 +15,9 @@ private extension Double {
     static let circlePadding: Double = 100
 }
 
-struct SingleRingeView: View {
+struct SingleRingeView: View, RingProgressProtocol {
 
-    @State private var scale = false
-
-    // View model
-    @EnvironmentObject var vm: TimerViewModel
-
-    // Computed
-    private var progress: CGFloat {
-        let fullTime = vm.fullTimePeriod.inSeconds
-        return (CGFloat(fullTime - vm.timeRemaining) / CGFloat(fullTime))
-    }
+    var progress: CGFloat
 
     var body: some View {
         ZStack {
@@ -37,7 +28,7 @@ struct SingleRingeView: View {
                     Spacer()
                 }
                 .frame(height: geometry.size.width - .circlePadding)
-                .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
+                .animation(.linear(duration: 0.5), value: progress)
 
                 HStack {
                     Spacer()
@@ -49,14 +40,6 @@ struct SingleRingeView: View {
             .frame(height: UIScreen.main.bounds.width)
         }
         .contentShape(Rectangle())
-        .tappable { result in
-            switch result {
-            case .shortTap:
-                vm.isPaused.toggle()
-            case .longTap:
-                vm.state = .stop
-            }
-        }
     }
 
     // MARK: - Private
