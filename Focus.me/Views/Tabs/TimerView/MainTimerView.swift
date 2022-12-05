@@ -9,6 +9,7 @@ import SwiftUI
 
 private extension CGFloat {
     static let progressViewPaddings: CGFloat = 50
+    static let imageSide: CGFloat = 40
 }
 
 struct MainTimerView: View {
@@ -20,7 +21,7 @@ struct MainTimerView: View {
             if viewModel.state == .pause {
                 Image(systemName: ImageConstant.pause)
                     .resizable()
-                    .frame(width: 40.0, height: 40.0)
+                    .frame(width: .imageSide, height: .imageSide)
             } else {
                 RemainTimeView(timeRemaining: viewModel.timeRemaining)
             }
