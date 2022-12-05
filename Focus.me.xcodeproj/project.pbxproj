@@ -34,6 +34,7 @@
 		35EDF231293DD342000DD9DA /* RingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF230293DD342000DD9DA /* RingProgressView.swift */; };
 		35EDF233293DD7A7000DD9DA /* SimpleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF232293DD7A7000DD9DA /* SimpleTimer.swift */; };
 		35EDF235293E3124000DD9DA /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF234293E3124000DD9DA /* EdgeInsets+Extensions.swift */; };
+		35EDF237293E3285000DD9DA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF236293E3285000DD9DA /* AlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		35EDF230293DD342000DD9DA /* RingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingProgressView.swift; sourceTree = "<group>"; };
 		35EDF232293DD7A7000DD9DA /* SimpleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimer.swift; sourceTree = "<group>"; };
 		35EDF234293E3124000DD9DA /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
+		35EDF236293E3285000DD9DA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				3560175D2939353A004AD5C7 /* ViewModel */,
 				35601768293A24C7004AD5C7 /* Models */,
 				35EDF232293DD7A7000DD9DA /* SimpleTimer.swift */,
+				35EDF236293E3285000DD9DA /* AlertView.swift */,
 			);
 			path = TimerView;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				3560176A293A24D5004AD5C7 /* AvailableTime.swift in Sources */,
 				3560176F293A49A2004AD5C7 /* SingleRingeView.swift in Sources */,
 				35EDF235293E3124000DD9DA /* EdgeInsets+Extensions.swift in Sources */,
+				35EDF237293E3285000DD9DA /* AlertView.swift in Sources */,
 				3560177C293B9F8A004AD5C7 /* MainView.swift in Sources */,
 				35601783293BCBA8004AD5C7 /* Task.swift in Sources */,
 				356017402939125B004AD5C7 /* Focus_meApp.swift in Sources */,

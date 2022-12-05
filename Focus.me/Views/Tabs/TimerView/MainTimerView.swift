@@ -15,6 +15,7 @@ private extension CGFloat {
 struct MainTimerView: View {
 
     @StateObject private var viewModel = TimerViewModel()
+    @State var isPresentedAlert = false
 
     var body: some View {
         ZStack {
@@ -29,6 +30,13 @@ struct MainTimerView: View {
             RingProgressView(progress: viewModel.progress)
                 .padding(.sideEdgeInsets(value: .progressViewPaddings))
         }
+        .alert(isPresented: $isPresentedAlert, content: {
+            Alert(title: Text("Остановить таймер"),
+                  primaryButton: .default(Text("Продолжить")),
+                  secondaryButton: .destructive(Text("Сбросить")) {
+                viewModel.state = .stop
+            })
+        })
         .contentShape(Rectangle())
 
         .tappable { result in
@@ -36,7 +44,7 @@ struct MainTimerView: View {
             case .shortTap:
                 viewModel.isPaused.toggle()
             case .longTap:
-                viewModel.state = .stop
+                isPresentedAlert = true
             }
         }
         .environmentObject(viewModel)
