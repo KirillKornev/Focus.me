@@ -14,7 +14,8 @@ struct MainTimerView: View {
     var body: some View {
         VStack {
             Spacer()
-            SingleRingeView(progress: viewModel.progress)
+            SingleRingeView(progress: viewModel.progress,
+                            timeRemaining: viewModel.timeRemaining)
                 .tappable { result in
                     switch result {
                     case .shortTap:

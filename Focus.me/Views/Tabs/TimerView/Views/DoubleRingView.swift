@@ -50,7 +50,7 @@ struct DoubleRingView: View {
                     Spacer()
                     HStack {
                         Spacer()
-                        RemainTimeView()
+//                        RemainTimeView()
                         Spacer()
                     }
                     Spacer()

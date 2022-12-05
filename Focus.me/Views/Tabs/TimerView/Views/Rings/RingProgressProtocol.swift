@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol RingProgressProtocol {
+protocol ProgressProtocol {
     var progress: CGFloat { get }
 }

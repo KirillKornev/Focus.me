@@ -7,17 +7,14 @@
 
 import SwiftUI
 
-private extension CGFloat {
-    static let padding: CGFloat = 10
-}
-
 private extension Double {
     static let circlePadding: Double = 100
 }
 
-struct SingleRingeView: View, RingProgressProtocol {
+struct SingleRingeView: View, ProgressProtocol {
 
     var progress: CGFloat
+    var timeRemaining: Int
 
     var body: some View {
         ZStack {
@@ -32,7 +29,7 @@ struct SingleRingeView: View, RingProgressProtocol {
 
                 HStack {
                     Spacer()
-                    RemainTimeView()
+                    RemainTimeView(timeRemaining: timeRemaining)
                     Spacer()
                 }
                 .frame(height: geometry.size.width - .circlePadding)

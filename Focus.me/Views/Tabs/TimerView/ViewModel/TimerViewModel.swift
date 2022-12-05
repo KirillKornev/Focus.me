@@ -9,6 +9,11 @@ import SwiftUI
 
 final class TimerViewModel: ObservableObject {
 
+    private lazy var timer = SimpleTimer(interval: 1) {
+        guard self.state == .run else { return }
+        self.timeRemaining -= 1
+    }
+
     @Published var fullTimePeriod: AvailableTime = .one
     @Published var timeRemaining: Int = AvailableTime.one.inSeconds {
         didSet {
@@ -22,7 +27,7 @@ final class TimerViewModel: ObservableObject {
         didSet {
             switch state {
             case .run, .pause:
-                break
+                timer.start()
             case .stop:
                 timeRemaining = fullTimePeriod.inSeconds
             }

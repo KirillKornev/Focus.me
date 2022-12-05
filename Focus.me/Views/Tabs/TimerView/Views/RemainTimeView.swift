@@ -14,18 +14,20 @@ extension String {
 struct RemainTimeView: View {
 
     // View model
-    @EnvironmentObject var vm: TimerViewModel
+//    @EnvironmentObject var vm: TimerViewModel
+
+    var timeRemaining: Int
     
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack {
-            Text("\(countToMinutes(timeRemaining: vm.timeRemaining))")
+            Text("\(countToMinutes(timeRemaining: timeRemaining))")
                 .padding()
                 .onReceive(timer) { _ in
-                    if vm.timeRemaining > 0 && vm.state == .run {
-                        vm.timeRemaining -= 1
-                    }
+//                    if vm.timeRemaining > 0 && vm.state == .run {
+//                        vm.timeRemaining -= 1
+//                    }
                 }
                 .font(.custom(.font, size: 60))
                 .fontWeight(.black)
