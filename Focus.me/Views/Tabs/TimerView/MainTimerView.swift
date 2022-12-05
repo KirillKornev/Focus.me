@@ -12,22 +12,27 @@ struct MainTimerView: View {
     @StateObject private var viewModel = TimerViewModel()
 
     var body: some View {
-        VStack {
-            Spacer()
-            SingleRingeView(progress: viewModel.progress,
-                            timeRemaining: viewModel.timeRemaining)
-                .tappable { result in
-                    switch result {
-                    case .shortTap:
-                        viewModel.isPaused.toggle()
-                    case .longTap:
-                        viewModel.state = .stop
-                    }
-                }
+        ZStack {
+            if viewModel.state == .pause {
+                Image(systemName: ImageConstant.pause)
+                    .resizable()
+                    .frame(width: 40.0, height: 40.0)
+            } else {
+                RemainTimeView(timeRemaining: viewModel.timeRemaining)
+            }
 
-            TimerButton()
-            Spacer()
-            PickerView().isHidden(viewModel.state != .stop)
+            RingProgressView(progress: viewModel.progress)
+                .padding(EdgeInsets(top: 0, leading: 50, bottom: 0, trailing: 50))
+        }
+        .contentShape(Rectangle())
+
+        .tappable { result in
+            switch result {
+            case .shortTap:
+                viewModel.isPaused.toggle()
+            case .longTap:
+                viewModel.state = .stop
+            }
         }
         .environmentObject(viewModel)
     }
