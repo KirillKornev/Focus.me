@@ -37,15 +37,6 @@ struct MainTimerView: View {
                 }
             }
 
-
-//            if viewModel.state == .pause {
-//                Image(systemName: ImageConstant.pause)
-//                    .resizable()
-//                    .frame(width: .imageSide, height: .imageSide)
-//            } else {
-//                RemainTimeView(timeRemaining: viewModel.timeRemaining)
-//            }
-
             RingProgressView(progress: viewModel.progress)
                 .padding(.sideEdgeInsets(value: .progressViewPaddings))
         }

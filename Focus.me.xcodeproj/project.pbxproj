@@ -35,6 +35,8 @@
 		35EDF233293DD7A7000DD9DA /* SimpleTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF232293DD7A7000DD9DA /* SimpleTimer.swift */; };
 		35EDF235293E3124000DD9DA /* EdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF234293E3124000DD9DA /* EdgeInsets+Extensions.swift */; };
 		35EDF237293E3285000DD9DA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF236293E3285000DD9DA /* AlertView.swift */; };
+		35EDF239293E3E49000DD9DA /* LoadingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF238293E3E49000DD9DA /* LoadingProgressView.swift */; };
+		35EDF23B293E3EBB000DD9DA /* RingDashProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35EDF23A293E3EBB000DD9DA /* RingDashProgressView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		35EDF232293DD7A7000DD9DA /* SimpleTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTimer.swift; sourceTree = "<group>"; };
 		35EDF234293E3124000DD9DA /* EdgeInsets+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EdgeInsets+Extensions.swift"; sourceTree = "<group>"; };
 		35EDF236293E3285000DD9DA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		35EDF238293E3E49000DD9DA /* LoadingProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingProgressView.swift; sourceTree = "<group>"; };
+		35EDF23A293E3EBB000DD9DA /* RingDashProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingDashProgressView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +261,8 @@
 				3560176E293A49A2004AD5C7 /* SingleRingeView.swift */,
 				35EDF22C293DD1E5000DD9DA /* RingProgressProtocol.swift */,
 				35EDF230293DD342000DD9DA /* RingProgressView.swift */,
+				35EDF238293E3E49000DD9DA /* LoadingProgressView.swift */,
+				35EDF23A293E3EBB000DD9DA /* RingDashProgressView.swift */,
 			);
 			path = Rings;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3560175829392700004AD5C7 /* TimerViewModel.swift in Sources */,
+				35EDF239293E3E49000DD9DA /* LoadingProgressView.swift in Sources */,
 				35EDF231293DD342000DD9DA /* RingProgressView.swift in Sources */,
 				3560174E293914C7004AD5C7 /* DoubleRingView.swift in Sources */,
 				35601774293B602B004AD5C7 /* ImageConstant.swift in Sources */,
@@ -351,6 +358,7 @@
 				35EDF22A293D099B000DD9DA /* TapCircleAnimatableModifier.swift in Sources */,
 				3560176A293A24D5004AD5C7 /* AvailableTime.swift in Sources */,
 				3560176F293A49A2004AD5C7 /* SingleRingeView.swift in Sources */,
+				35EDF23B293E3EBB000DD9DA /* RingDashProgressView.swift in Sources */,
 				35EDF235293E3124000DD9DA /* EdgeInsets+Extensions.swift in Sources */,
 				35EDF237293E3285000DD9DA /* AlertView.swift in Sources */,
 				3560177C293B9F8A004AD5C7 /* MainView.swift in Sources */,
