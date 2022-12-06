@@ -7,49 +7,54 @@
 
 import SwiftUI
 
-struct TapModifier: ViewModifier {
-
-    private enum ButtonState: Int {
-        case pressed
-        case free
-
-        var scale: Double {
-            switch self {
-            case .pressed:
-                return 0.99
-            case .free:
-                return 1
-            }
-        }
-    }
-
-    let closure: (() -> Void)?
-
-    @State private var state: ButtonState = .pressed
-
-    func body(content: Content) -> some View {
-        content
-            .gesture(
-                DragGesture(minimumDistance: .zero)
-                    .onChanged({ _ in
-                        state = .pressed
-                        closure?()
-                    })
-
-                    .onEnded({ _ in
-                        state = .free
-                    })
-            )
-
-            .scaleEffect(state.scale)
-            .animation(.easeIn(duration: 6), value: state)
-    }
-}
-
 extension View {
 
     /// Create an tap scale effect
-    func tappable(closure: (() -> Void)? = nil) -> some View {
-        modifier(TapModifier(closure: closure))
+    func tappable(closure: ((TappableModifier.Result) -> Void)? = nil) -> some View {
+        modifier(TappableModifier(closure: closure))
+    }
+}
+
+struct TappableModifier: ViewModifier {
+
+    enum Result {
+        case shortTap
+        case longTap
+    }
+
+    @State private var isTapped = false
+    @State private var isStopped: Bool = false
+    @State var state: TimerState = .run
+
+    var closure: ((Result) -> Void)?
+
+
+    func body(content: Content) -> some View {
+        let dragGesture = DragGesture(minimumDistance: .zero)
+        let longGesture = LongPressGesture(minimumDuration: 0.5)
+
+        content
+            .modifier(TapCircleAnimatableModifier(tapped: isTapped))
+
+            .gesture(dragGesture
+                .onChanged { _ in
+                    isStopped = false
+                    isTapped = true
+                }
+
+                .onEnded{ _ in
+                    guard !isStopped else { return }
+
+                    isTapped = false
+                    closure?(.shortTap)
+                }
+            )
+
+            .simultaneousGesture(longGesture
+                .onEnded { _ in
+                    isStopped = true
+                    closure?(.longTap)
+                }
+            )
     }
 }

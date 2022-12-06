@@ -15,7 +15,7 @@ struct TasksListView: View {
     var body: some View {
 
         List(viewModel.tasks) { task in
-            TaskCellView(task: task).tappable() { viewModel.removeTask(task) }
+            TaskCellView(task: task)
             .listRowBackground(Color.clear)
         }
         .listStyle(.plain)

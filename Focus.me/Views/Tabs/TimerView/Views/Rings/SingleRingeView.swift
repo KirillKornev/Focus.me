@@ -7,20 +7,14 @@
 
 import SwiftUI
 
-private extension CGFloat {
-    static let padding: CGFloat = 10
+private extension Double {
+    static let circlePadding: Double = 100
 }
 
-struct SingleRingeView: View {
+struct SingleRingeView: View, ProgressProtocol {
 
-    // View model
-    @EnvironmentObject var vm: TimerViewModel
-
-    // Computed
-    private var progress: CGFloat {
-        let fullTime = vm.fullTimePeriod.inSeconds
-        return (CGFloat(fullTime - vm.timeRemaining) / CGFloat(fullTime))
-    }
+    var progress: CGFloat
+    var timeRemaining: Int
 
     var body: some View {
         ZStack {
@@ -30,18 +24,19 @@ struct SingleRingeView: View {
                     ring(for: ColorConstant.strawberry)
                     Spacer()
                 }
-                .frame(height: geometry.size.width - 50)
-                .animation(.linear(duration: vm.state == .stop ? 0 : 1), value: progress)
+                .frame(height: geometry.size.width - .circlePadding)
+                .animation(.linear(duration: 0.5), value: progress)
 
                 HStack {
                     Spacer()
-                    RemainTimeView()
+                    RemainTimeView(timeRemaining: timeRemaining)
                     Spacer()
                 }
-                .frame(height: geometry.size.width - 50)
+                .frame(height: geometry.size.width - .circlePadding)
             }
             .frame(height: UIScreen.main.bounds.width)
         }
+        .contentShape(Rectangle())
     }
 
     // MARK: - Private
